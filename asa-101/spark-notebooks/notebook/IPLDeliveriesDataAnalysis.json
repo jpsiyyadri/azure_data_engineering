@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "4a6af0f5-0dcc-4408-bc43-16298f013ba6"
+				"spark.autotune.trackingId": "c6504be4-053d-4354-8d45-f8d9ef19a448"
 			}
 		},
 		"metadata": {
@@ -58,7 +58,7 @@
 					}
 				},
 				"source": [
-					"## IPL Deliveries Data Analysis"
+					"## Load Data From ADLS Gen 2 and Write into Lake Database"
 				]
 			},
 			{
