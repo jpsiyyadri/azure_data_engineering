@@ -1,0 +1,17 @@
+{
+	"name": "TSQL_QueryDeliveriesCSV",
+	"properties": {
+		"content": {
+			"query": "select * from\nOPENROWSET (\n    BULK 'abfss://bcci@demostoragepipeline.dfs.core.windows.net/landing_zone/deliveries.csv',\n    FORMAT = 'CSV',\n    PARSER_VERSION = '2.0',\n    HEADER_ROW = TRUE\n) as deliveries;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
