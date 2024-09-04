@@ -84,6 +84,26 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/SQL_QueryDeliveriesData')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "use bcci_db;\n\nselect * from deliveries;",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "bcci_db",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/CreateDataFrame')]",
 			"type": "Microsoft.Synapse/workspaces/notebooks",
 			"apiVersion": "2019-06-01-preview",
@@ -204,7 +224,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/IPLDeliveriesDataAnalysis')]",
+			"name": "[concat(parameters('workspaceName'), '/LoadDataFromADLS2IntoLakeDB')]",
 			"type": "Microsoft.Synapse/workspaces/notebooks",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -224,7 +244,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "7b4227ff-4dbb-45a5-aca1-6e4aa6e5db55"
+						"spark.autotune.trackingId": "d20eec11-8adc-42ff-b837-a9912067f305"
 					}
 				},
 				"metadata": {
@@ -249,8 +269,7 @@
 						"sparkVersion": "3.4",
 						"nodeCount": 10,
 						"cores": 4,
-						"memory": 28,
-						"automaticScaleJobs": true
+						"memory": 28
 					},
 					"sessionKeepAliveTimeout": 30
 				},
@@ -265,12 +284,11 @@
 							}
 						},
 						"source": [
-							"## IPL Deliveries Data Analysis"
+							"## Load Data From ADLS Gen 2 and Write into Lake Database"
 						]
 					},
 					{
 						"cell_type": "code",
-						"metadata": {},
 						"source": [
 							"# deliveries_df = spark.read.csv(\"abfss://bcci@demostoragepipeline.dfs.core.windows.net/landing_zone/deliveries.csv\")\n",
 							"deliveries_df = spark.read.load(\"abfss://bcci@demostoragepipeline.dfs.core.windows.net/landing_zone/deliveries.csv\", format=\"csv\", header=True)"
@@ -479,6 +497,26 @@
 			},
 			"dependsOn": [],
 			"location": "southindia"
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/TSQL_QueryData')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "master",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
 		}
 	]
 }
