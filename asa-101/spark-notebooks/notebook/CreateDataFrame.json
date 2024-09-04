@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "3ddd7e03-504c-4b03-8508-1ea51586f3e1"
+				"spark.autotune.trackingId": "b3d01eb3-d7d0-4994-9017-9fa43047beeb"
 			}
 		},
 		"metadata": {
@@ -53,7 +53,7 @@
 				"source": [
 					"data = [(1, \"james\", \"usa\"), (2, \"jack\", \"aus\")]"
 				],
-				"execution_count": 14
+				"execution_count": 1
 			},
 			{
 				"cell_type": "code",
@@ -71,7 +71,7 @@
 				"source": [
 					"dataframe = spark.createDataFrame(data, schema=[\"id\", \"name\", \"country\"])"
 				],
-				"execution_count": 15
+				"execution_count": 2
 			},
 			{
 				"cell_type": "code",
@@ -84,12 +84,13 @@
 						"transient": {
 							"deleting": false
 						}
-					}
+					},
+					"collapsed": false
 				},
 				"source": [
-					"dataframe.show()"
+					"display(dataframe)"
 				],
-				"execution_count": 16
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
