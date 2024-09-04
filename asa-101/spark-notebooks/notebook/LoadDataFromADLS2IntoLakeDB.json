@@ -1,5 +1,5 @@
 {
-	"name": "IPLDeliveriesDataAnalysis",
+	"name": "LoadDataFromADLS2IntoLakeDB",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "c6504be4-053d-4354-8d45-f8d9ef19a448"
+				"spark.autotune.trackingId": "d20eec11-8adc-42ff-b837-a9912067f305"
 			}
 		},
 		"metadata": {
