@@ -1,0 +1,17 @@
+{
+	"name": "SQL_QueryDeliveriesData",
+	"properties": {
+		"content": {
+			"query": "use bcci_db;\n\nselect * from deliveries;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "bcci_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
