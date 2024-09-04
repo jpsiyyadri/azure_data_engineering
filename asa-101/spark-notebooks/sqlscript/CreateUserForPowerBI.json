@@ -1,0 +1,17 @@
+{
+	"name": "CreateUserForPowerBI",
+	"properties": {
+		"content": {
+			"query": "CREATE login powerbiuser with password = 'powerbipassword#123';\n\nCREATE USER powerbiuser FOR LOGIN powerbiuser;\n\nALTER ROLE db_datareader ADD MEMBER powerbiuser;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "bcci_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
