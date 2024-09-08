@@ -80,7 +80,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT * From FactTrips where\nLastModifiedTime > '@{activity('PreviousWaterMark').output.firstRow.WatermarkValue}'\nand\nLastModifiedTime <= '@{activity('NewWaterMark').output.firstRow.WatermarkValue}';",
+							"value": "SELECT * From FactTrips where\nLastModifiedTime > '@{activity('PreviousWaterMark').output.firstRow.WatermarkValue}'\nand\nLastModifiedTime <= '@{activity('NewWaterMark').output.firstRow.NewWaterMark}';",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
