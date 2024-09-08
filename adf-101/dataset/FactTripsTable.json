@@ -1,0 +1,33 @@
+{
+	"name": "FactTripsTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDBForDataEngineering",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "tripID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "customerID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LastModifiedTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FactTrips"
+		}
+	}
+}
